@@ -7,13 +7,29 @@ class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
+    total: 0,
+    positivePercetage: 0,
   };
 
   updateFeedback = props => {
     this.setState(prev => {
       return { [props.name]: prev[props.name] + 1 };
     });
+    this.countTotalFeedback();
+    this.countPositiveFeedbackPercentage();
   };
+
+  countTotalFeedback() {
+    this.setState(prev => {
+      return { total: prev.good + prev.neutral + prev.bad };
+    });
+  }
+
+  countPositiveFeedbackPercentage() {
+    this.setState(prev => {
+      return { positivePercetage: Math.round((prev.good * 100) / prev.total) };
+    });
+  }
 
   render() {
     return (
@@ -40,6 +56,8 @@ class App extends Component {
               <li>Good: {this.state.good}</li>
               <li>Neutral: {this.state.neutral}</li>
               <li>Bad: {this.state.bad}</li>
+              <li>Total: {this.state.total}</li>
+              <li>Positive feedback: {this.state.positivePercetage} %</li>
             </ul>
           </div>
         </div>
