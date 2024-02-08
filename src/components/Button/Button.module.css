@@ -1,0 +1,25 @@
+.btn {
+  background-color: teal;
+  color: gainsboro;
+  padding: 8px 16px;
+  min-width: 100px;
+  font-size: 18px;
+  border: 3px solid teal;
+  border-radius: 8px;
+  /* box-shadow: 1px 1px 3px gray; */
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #067a7a;
+  border: 3px solid #067a7a;
+  color: #eeeded;
+}
+
+.btn:active {
+  background-color: 2px solid #056060;
+  border: 3px solid #056060;
+  color: #f7f5f5;
+  font-size: 16px;
+}
