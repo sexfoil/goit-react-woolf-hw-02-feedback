@@ -3,7 +3,7 @@ import css from './Button.module.css';
 
 class Button extends Component {
   handleOnClick = () => {
-    this.props.updateFeedback(this.props);
+    this.props.updateFeedback(this.props.name);
   };
   render() {
     const { name } = this.props;
